@@ -88,7 +88,7 @@ if not groq_api_key:
 
 # ElevenLabs TTS (voz de Bellia)
 elevenlabs_api_key = os.getenv("ELEVENLABS_API_KEY")
-elevenlabs_voice_id = os.getenv("ELEVENLABS_VOICE_ID", "NWqMOQLlMBaUbjKYdhbW")
+elevenlabs_voice_id = os.getenv("ELEVENLABS_VOICE_ID", "CaJslL1xziwefCeTNzHv")  # Cristina Campos - voz sensual español
 
 if not elevenlabs_api_key:
     print("⚠️  ELEVENLABS_API_KEY no configurada - TTS deshabilitado")
@@ -384,9 +384,9 @@ async def text_to_speech(req: TTSRequest):
         "model_id": "eleven_multilingual_v2",
         "language_code": "es",
         "voice_settings": {
-            "stability": 0.35,          # Más bajo = más expresiva y natural
+            "stability": 0.45,          # Más estable para evitar cortes
             "similarity_boost": 0.80,   # Mantener la voz reconocible
-            "style": 0.45,              # Más estilo = más emocional/cálida
+            "style": 0.50,              # Estilo sensual pero controlado
             "use_speaker_boost": True,
         },
     }
@@ -919,6 +919,6 @@ if __name__ == "__main__":
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=7862,
+        port=7863,
         reload=True
     )

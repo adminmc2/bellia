@@ -3051,10 +3051,7 @@ async function handleFaceID() {
 }
 
 function checkAuthOnLoad() {
-    // DEMO MODE: Siempre mostrar login para la demo
-    // Comentar estas 2 líneas para producción
-    localStorage.removeItem('bellia_logged_in');
-    localStorage.removeItem('bellia_user');
+    // Mantener sesión biométrica activa
 
     const isLoggedIn = localStorage.getItem('bellia_logged_in') === 'true';
     if (isLoggedIn) {
